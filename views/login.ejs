@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no maximum-scale=1.0">
+    <title>后台登陆</title>
+    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="./stylesheets/login.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
+          <div class="panel panel-default login_box">
+          <div class="panel-heading">
+            后台登陆
+            <div class="alert alert-danger text" role="alert">
+                <p>登陆失败:用户名和密码错误或空!</p>
+            </div>
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                    <input type="text" class="form-control user" id="exampleInputAmount" placeholder="输入用户名" name="username">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                     <input type="password" class="form-control pass" id="inputPassword3" placeholder="输入密码" name="password">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="button" class="btn btn-info login_btn">登陆</button>
+                </div>
+              </div>
+            </form>
+        </div>
+        </div>
+</div>
+      </div>
+    </div>
+  <%# js文件引用%>
+  <script src="./javascripts/jquery-1.9.1.js"></script>
+  <script src="./javascripts/bootstrap.js"></script>
+  <script src="./javascripts/login.js"></script>
+
+</body>
+</html>

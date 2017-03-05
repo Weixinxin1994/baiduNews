@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no maximum-scale=1.0">
+    <title>百度新闻首页</title>
+    <link href="./stylesheets/normalize.css" rel="stylesheet">
+    <link href="./stylesheets/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <%# 顶部logo和按钮%>
+         <div class="top_icon">
+          <div class="top_icon_left">
+            <a href="javascript:void(0)"></a>
+            <a href="admin"></a>
+          </div>
+          <div class="top_icon_right">
+            <a href="javascript:void(0)"></a>
+            <a href="javascript:void(0)"></a>
+          </div>
+         </div>
+         <%# 主导航%>
+         <nav class="menu">
+             <ul>
+               <li name="all"><a href="javascript:void(0)" class="menu_A">全部</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">精选</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">百家</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">本地</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">娱乐</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">社会</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">军事</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">女人</a><b></b></li>
+               <li name="classify" class="mlw_2"><a href="javascript:void(0)">互联网</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">搞笑</a><b></b></li>
+               <li name="classify"><a href="javascript:void(0)">科技</a><b></b></li>
+             </ul>
+         </nav>
+         <%# 轮播图%>
+         <div class="show">
+           <div class="shade"></div>
+           <div class="imgBox">
+               <img src="./images/1.png" alt="">
+               <img src="./images/2.png" alt="">
+               <img src="./images/3.png" alt="">
+               <img src="./images/4.png" alt="">
+           </div>
+           <ul class="showUl">
+             <li><a href="javascript:void(0)">孙怡踩董子健上位？又甩了男友，董子健是谁</a></li>
+             <li><a href="javascript:void(0)">特朗普和财长对于汇率的不同态度说明什么</a></li>
+             <li><a href="javascript:void(0)">此款飞机的叛逃让苏联炸锅了——后来一举动全数挽回损失</a></li>
+             <li><a href="javascript:void(0)">奥斯卡颁奖乌龙算啥？NBA奇葩事件一箩筐</a></li>
+           </ul>
+         </div>
+      </header>
+      <article class="content">
+        <%# 滚动信息%>
+        <div class="rollMsg">
+              <span><i>热点</i></span>
+              <div class="rollMsg_list">
+                <ul>
+                  <li><a href="javascript:void(0)">习近平主持财经领导小组第十五次会议</a></li>
+                  <li><a href="javascript:void(0)">2020年高铁将覆盖80%以上超100万人口城市</a></li>
+                  <li><a href="javascript:void(0)">韩国检方起诉三星李在镕</a></li>
+                  <li><a href="javascript:void(0)">亚足联终止乐视转播合作</a></li>
+                  <li><a href="javascript:void(0)">人均GDP比拼9省超1万美元</a></li>
+                </ul>
+              </div>
+        </div>
+        <%# 新闻列表%>
+          <div class="news_list">
+            <%for(var i=0;i<data.length;i++){%>
+                   <%if(data[i].style=="odd"){%>
+                     <div class="news_list_content odd">
+                     <div class="list_img">
+                       <a href="newscontent/url=<%=data[i].time%>_<%=data[i].id%>.html"><img src="<%=data[i].imgurl%>" alt=""></a>
+                     </div>
+                      <div class="odd_right">
+                        <a href="newscontent/url=<%=data[i].time%>_<%=data[i].id%>.html">
+                          <h1><%=data[i].title%></h1>
+                          <p><%=data[i].time.slice(0,9)%><span><%=data[i].src%></span></p>
+                        </a>
+                       </div>
+                     </div>
+                   <%}else{%>
+                     <div class="news_list_content more">
+                      <h1><a href="newscontent/url=<%=data[i].time%>_<%=data[i].id%>.html"><%=data[i].title%></a></h1>
+                      <div class="list_img">
+                      <a href="newscontent/url=<%=data[i].time%>_<%=data[i].id%>.html">
+                     <%for(var j=0;j<data[i].imgurl.split(',').length;j++){%>
+                        <img src="<%=data[i].imgurl.split(',')[j]%>">
+                     <%}%>
+                     </a>
+                     </div>
+                      <p><a href="newscontent/url=<%=data[i].time%>_<%=data[i].id%>.html"><%=data[i].time.slice(0,9)%><span><%=data[i].src%></span></a></p>
+                      </div>
+                   <%}%>
+
+            <%}%>
+          </div>
+      </article>
+    </div>
+    <%# js文件引用%>
+    <script src="./javascripts/jquery-1.9.1.js"></script>
+    <script src="./javascripts/index.js"></script>
+
+  </body>
+</html>
